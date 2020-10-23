@@ -1,0 +1,70 @@
+<html> 
+  <head>
+    <title>Questão 7</title> 
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/main.css">
+    <script>
+        var time = new Date();
+        console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+    </script>
+        
+    
+  </head>
+
+  <body> 
+    <div style="text-align: center;  width: 100%;">
+      <form style="background-color: aqua; width: 50%; display: inline-block; position: relative;"> <!--propriedade de style que deixa os textos e campos centralizados-->
+                                                                                                      <!--propriedade de style que muda a cor do background do elemento-->
+                                                                                                      <!--Ver tipos de Display e Position-->
+        <p>Nome:</p>
+        <input id="input1" type="text" class="input_format"><br>
+        <p>Sobrenome</p>
+        <input id="input2" type="text" class="input_format"> <br><br>
+        <input id="main_button" type="button" class="input_format" value="Concatenar" onclick="change_name()">
+      </form>
+    </div>
+    
+    <div style="text-align: center; position: relative; width: auto">
+        <p style="text-align: center; padding: 15px 15px; background-color: yellow;">
+            Nome Completo: <b id="new_name">João da Silva</b>   
+        </p>
+    </div>
+
+    <input type="button" class="button6" value="Separar Concatenação" onclick="separate_name()">
+
+    <!--Codigo em JavaScript pode ser adicionado com script tag-->
+    <!--função alert cria uma caixa de dialogo quie funciona como alerta na página-->
+    <!--getElementbyid é só chamar essa função e passar o ID que foi passado com parametro e pega o conteudo-->
+    <!--Semelhante ao getleementbyid é o querySelector porem ao referenciar o Id precisa por #-->
+    <!--concat é só += ou metodo concat-->
+    <!--innerHTML serve para mudar um elemento no proprio html de dentro do script / PREENCHER NO HTML-->
+    <!--Foi feito a captura dos inputs, salvo em full name e passando o id de onde quer substituir e chamando o innetHTML e atribuindo ao que quer substituir-->
+    <script>
+        function alert_function(){
+            alert(document.getElementById('input1').value += document.getElementById('input2').value); 
+        }
+
+        function change_name(){
+            var name = document.querySelector('#input1').value;
+            var nickname =  document.querySelector('#input2').value;
+            var space = " ";
+            document.querySelector('#new_name').innerHTML =  name + space + nickname;
+        }
+
+        function separate_name(){
+
+            var full_name = document.getElementById('new_name').value;
+            names = full_name.split(" ");
+            document.querySelector('#input1').innerHTML =  names[0];
+            document.querySelector('#input2').innerHTML =  names[1];
+        }
+
+        function change_background(){
+
+        }
+
+
+    </script>
+
+  </body>
+</html> 
