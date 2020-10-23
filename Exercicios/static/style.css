@@ -1,0 +1,24 @@
+.input_format{
+
+    border-radius: 5px;   /*arredondar borda*/
+    font-size: 18px;
+    border: 1px solid gray; /*detalhes da borda*/
+}
+
+#main_button{
+    padding: 15px; /* espaço em torno do conteudo*/
+    background-color: green;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    color: white;
+}
+
+.button6{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid gray;
+    background-color: wheat;
+}
+
+
