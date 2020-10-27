@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <meta charset="utf-8">
+    
+  </head>
+
+  <body>
+    
+    <!--Containers criam meios para centralizar e, horizontalmente, preencher os conteúdos de seu site;
+Use .container para ter uma largura responsiva em pixel ou .container-fluid para ter width: 100%, em todas viewports e tamanhos de disposivos.
+-->
+    <div class="container">
+        <!--A soma das divisoes precisa dar 12. Classes de colunas indicam o número de colunas que você quer usar, dentro de uma possibilidade de 12, por row;-->
+        <!--Rows são elemntos para envolver colunas. Largura de colunas são definidas em porcentagem-->
+        <!--Em um layout grid, o conteúdo deve ser posicionado dentro de colunas e só elas podem ser filhos imediatos de .rows;-->
+        <!--Por exemplo, quatro exemplos de .col-sm vão, automaticamente, ter 25% de largura, no breakpoint sm ou maior;-->
+        <!--Para fazer o grid responsivo, existem cinco breakpoints, um para cada breakpoint responsivo: extra small (implícito), small, medium, large e extra large;-->
+        <!--Breakpoints grid são baseados em media queries min-width, significando que elas aplicam estilos para o dado breakpoint e outros maiores;-->
+        <div id= "alert_message" class="alert alert-primary" style="display: none;"> <!--Cria tela de alerta-->
+            Tela de alerta criada!
+
+        </div>
+        <div class="row">
+
+            <div class="col-3" style="background-color: red">
+                conteudo1
+            </div>
+            <div class="col-3" style="background-color: blue">
+                conteudo2
+            </div>
+            <div class="col-3" style="background-color: purple">
+                conteudo3
+            </div>
+            <div class="col-3" style="background-color: green">
+                conteudo4
+            </div>
+        </div>
+
+        <button class="btn btn-dark btn1">botão1</button> <!--altera estilo dos botoes com bootstrap-->
+        <button class="btn btn-warning btn2">botão2</button>
+        <button class="btn btn-success btn3">botão3</button>
+        <button class="btn btn-danger">botão4</button>
+    </div>
+
+    <script>
+        // Com JQuery é necessario usar a função $() - função construtora - para encontrar um elemento HTML dentro da aplicação e usar as funçoes da biblioteca
+        //possui como argumento um seletor CSS para TAG, ID ou classe... para poder encontrar qual é o elemento HTML.
+        // a função $(document).ready() é responsavel por executar o conteudo do metodo ready(). O modo mais comum de utilizarmos ela é em conjunto com uma função anônima contendo os comandos que desejamos executar
+        
+        // $(document).ready(function(){
+            //o nosso codigo jquery vai aqui.
+    
+        //});
+            //função ready indica que só vai carregar o codigo da function quando todo o conteudo da pagina estiver carregado
+            //Função de FadeIN
+            $(document).ready(function(){
+                $(".btn1").click(function(){
+                    $("#alert_message").fadeIn("slow");
+                });
+                //Função de esconder a barra de alerta
+                $(".btn2").click(function(){
+                    $("#alert_message").hide();
+                });
+
+                $(".btn3").click(function(){
+                    $("#alert_message").attr("text", "oi");
+                    $("#alert_message").fadeIn("slow");
+
+                });
+           
+            });
+
+
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
