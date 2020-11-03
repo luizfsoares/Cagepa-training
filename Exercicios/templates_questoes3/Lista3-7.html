@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    
+    <div class="container">
+        <!--Formulario, é bom separar os campos em divs-->
+
+        <form style="background-color: ghostwhite;">
+            <div class="form-group" style="padding-left: 3%;">
+                <label for="name">Nome</label> <br>
+                <input id="name" class="form-group" type="text" placeholder="Insira seu Nome" style="width: 90%;"> <br>
+            </div>
+
+            <div class="form-group" style="padding-left: 3%;">
+                <label for="nickname" style="justify-content: left;">Sobrenome</label> <br>
+                <input id="nickname" class="form-group" type="text" placeholder="Insira seu Sobrenome" style="width: 90%;">
+            </div>
+
+            <div class="btn btn-success col-12 btnConcatenar"> Concatenar</div>
+     
+        </form>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <div>
+            <label style="margin-top: 5%;"> Nome Completo: <b id="myName">João da Silva</b> </label>
+        </div>
+
+        <button class="btn btn-danger btnSepararConc">Separar Concatenação</button>
+    </div>
+
+    <script>
+        //função Jquery para emitir alerta ao clicar no botao
+        //O método val() retorna ou define o atributo de valor dos elementos selecionados.
+        //É possivel capturar texto dos inputs e atribuit a variaveis para uso posterior.
+
+        $(document).ready(function(){
+            $(".btnConcatenar").click(function(){
+                let str1 = $("#name").val();
+                let str2 = $("#nickname").val();
+                
+                $("#myName").text(str1 + " " + str2);
+                
+            });
+
+            $(".btnSepararConc").click(function(){
+
+                let full_name = $("#myName").text();
+                let names = full_name.split(" ");
+                $("#name").val(names[0]);
+                $("#nickname").val(names[1]);
+                $("#myName").text("João da Silva");
+
+            });
+
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
